@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>MyMoney Bank - Investment Planner</title>
+</head>
+
+<body>
+	<div align="center">
+		<h3>MyMoney Bank - Investment Planner Tool</h3>
+		<form action="#" th:action="@{/client/investmentplanner}" method="post" th:object="${quest}">
+			<label>Principal:</label>
+			<input type="number" th:field="*{principal}" required /><br />
+			<div  class="alert alert-warning" th:if="${#fields.hasErrors('principal')}" th:errors="*{principal}"></div>
+			<label>Target Rate of Return:</label>
+			<input type="number" th:field="*{target_rate}" required /><br />
+			<div  class="alert alert-warning" th:if="${#fields.hasErrors('target_rate')}" th:errors="*{target_rate}"></div>
+			<label>Term (Days):</label>
+			<input type="number" th:field="*{num_of_days}" required /><br />
+			<div  class="alert alert-warning" th:if="${#fields.hasErrors('num_of_days')}" th:errors="*{num_of_days}"></div>
+			<button type="submit">I can't wait to see the plans!</button>
+		</form>
+	</div>
+</body>
+
+</html>
