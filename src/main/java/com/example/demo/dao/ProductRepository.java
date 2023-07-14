@@ -12,7 +12,7 @@ public interface ProductRepository {
 	
 	public List<Product> findAll();
 	
-	public List<Product> findByCriteria(BigDecimal target_rate, BigDecimal principal, Integer num_of_days );
+	public List<Product> findByCriteria(BigDecimal targetRate, BigDecimal principal, Integer numOfDays );
 	
 	public List<Product> findByCriteria(Questionnaire quest);
 }

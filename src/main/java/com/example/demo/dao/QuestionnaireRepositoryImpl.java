@@ -18,13 +18,13 @@ public class QuestionnaireRepositoryImpl implements QuestionnaireRepository {
 	@Override
 	public int save(Questionnaire quest) {
 		return jdbcTemplate.update("INSERT INTO Questionnaire VALUES(?,?,?,?,?,?)",
-				quest.getQuest_id(),quest.getClient_id(),quest.getPrincipal(),quest.getTarget_rate(),quest.getNum_of_days(),quest.getSubmission_time());
+				quest.getQuestId(),quest.getClientId(),quest.getPrincipal(),quest.getTargetRate(),quest.getNumOfDays(),quest.getSubmissionTime());
 		
 	}
 
 	@Override
-	public Questionnaire findById(Integer quest_id) {
-		return jdbcTemplate.queryForObject("SELECT * FROM questionnaire WHERE quest_id = ?", BeanPropertyRowMapper.newInstance(Questionnaire.class), quest_id);
+	public Questionnaire findById(Integer questId) {
+		return jdbcTemplate.queryForObject("SELECT * FROM questionnaire WHERE quest_id = ?", BeanPropertyRowMapper.newInstance(Questionnaire.class), questId);
 		
 	}
 
@@ -34,8 +34,8 @@ public class QuestionnaireRepositoryImpl implements QuestionnaireRepository {
 	}
 
 	@Override
-	public List<Questionnaire> findByClientId(Integer client_id) {
-		return jdbcTemplate.query("SELECT * FROM questionnaire WHERE client_id = ?", BeanPropertyRowMapper.newInstance(Questionnaire.class), client_id);
+	public List<Questionnaire> findByClientId(Integer clientId) {
+		return jdbcTemplate.query("SELECT * FROM questionnaire WHERE client_id = ?", BeanPropertyRowMapper.newInstance(Questionnaire.class), clientId);
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class QuestionnaireRepositoryImpl implements QuestionnaireRepository {
 	@Override
 	public int delete(Questionnaire quest) {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.update("DELETE FROM questionnaire WHERE quest_id = ?", quest.getQuest_id());
+		return jdbcTemplate.update("DELETE FROM questionnaire WHERE quest_id = ?", quest.getQuestId());
 	}
 	
 	

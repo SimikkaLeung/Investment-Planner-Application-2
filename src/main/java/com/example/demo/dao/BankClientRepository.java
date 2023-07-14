@@ -6,9 +6,9 @@ import com.example.demo.models.BankClient;
 
 public interface BankClientRepository {
 	
-	public BankClient findById(Integer client_id);
+	public BankClient findById(Integer clientId);
 	
-	public BankClient findByAccountId(String account_id);
+	public BankClient findByAccountId(String accountId);
 	
 	public List<BankClient> findAll();
 		

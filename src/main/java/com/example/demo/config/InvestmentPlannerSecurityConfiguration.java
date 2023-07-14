@@ -35,8 +35,8 @@ public class InvestmentPlannerSecurityConfiguration extends WebSecurityConfigure
 		// TODO Auto-generated method stub
 		List<WebAccount> accountList = securityService.findAllAccounts();
 		for(WebAccount account: accountList) {
-			auth.inMemoryAuthentication().withUser(account.getAccount_id())
-				.password(this.passwordEncoder().encode(account.getAcc_password())).roles(account.getUser_type());
+			auth.inMemoryAuthentication().withUser(account.getAccountId())
+				.password(this.passwordEncoder().encode(account.getAccPassword())).roles(account.getUserType());
 			
 		}
 		

@@ -28,32 +28,32 @@ public class InvestmentPlannerSecurityServiceImpl implements InvestmentPlannerSe
 			return accountRepo.findAll();
 		}
 		
-		// Get the client_id of the current user by the account_id they use to log in.
+		// Get the clientId of the current user by the accountId they use to log in.
 		public BankClient findClientbyAccountId() {
 			Object currentUser = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 			if (currentUser instanceof UserDetails) {
-			  String account_id = ((UserDetails) currentUser).getUsername();
-			  return clientRepo.findByAccountId(account_id);
+			  String accountId = ((UserDetails) currentUser).getUsername();
+			  return clientRepo.findByAccountId(accountId);
 			} else {
 				System.out.println("No");
-			  String account_id = currentUser.toString();
-			  return clientRepo.findByAccountId(account_id);
+			  String accountId = currentUser.toString();
+			  return clientRepo.findByAccountId(accountId);
 			}
 		}
 		
-		// Get the user_type of the current user by the account_id they use to log in.
+		// Get the userType of the current user by the accountId they use to log in.
 		@Override
 		public String findUserTypebyAccountId() {
 			Object currentUser = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 			if (currentUser instanceof UserDetails) {
-				String account_id = ((UserDetails) currentUser).getUsername();
-			 	return accountRepo.findUserTypeById(account_id).trim();
+				String accountId = ((UserDetails) currentUser).getUsername();
+			 	return accountRepo.findUserTypeById(accountId).trim();
 			} else {
 				System.out.println("No");
-				String account_id = currentUser.toString();
-				return accountRepo.findUserTypeById(account_id).trim();
+				String accountId = currentUser.toString();
+				return accountRepo.findUserTypeById(accountId).trim();
 			}
 
 		}

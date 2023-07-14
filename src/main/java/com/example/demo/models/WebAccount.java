@@ -1,53 +1,53 @@
 package com.example.demo.models;
 
 public class WebAccount {
-	private String account_id;
-	private String acc_password;
-	private String user_type;
+	private String accountId;
+	private String accPassword;
+	private String userType;
 	
 	public WebAccount() {
 		super();
 
 	}
 	
-	public WebAccount(String account_id, String acc_password, String user_type) {
+	public WebAccount(String accountId, String accPassword, String userType) {
 		super();
-		this.account_id = account_id;
-		this.acc_password = acc_password;
-		this.user_type = user_type;
+		this.accountId = accountId;
+		this.accPassword = accPassword;
+		this.userType = userType;
 	}
 
-	public String getAccount_id() {
-		return account_id;
+	public String getAccountId() {
+		return accountId;
 	}
 
-	public void setAccount_id(String account_id) {
-		this.account_id = account_id;
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
 	}
 
-	public String getAcc_password() {
-		return acc_password;
+	public String getAccPassword() {
+		return accPassword;
 	}
 
-	public void setAcc_password(String acc_password) {
-		this.acc_password = acc_password;
+	public void setAccPassword(String accPassword) {
+		this.accPassword = accPassword;
 	}
 
-	public String getUser_type() {
+	public String getUserType() {
 		
-//		System.out.println("WebAcc: " + user_type.equals("client") );
-//		System.out.println("WebAcc: length" + user_type.length() );
-//		System.out.println("WebAcc: " + user_type.trim().length() );
-		return user_type.trim();
+//		System.out.println("WebAcc: " + userType.equals("client") );
+//		System.out.println("WebAcc: length" + userType.length() );
+//		System.out.println("WebAcc: " + userType.trim().length() );
+		return userType.trim();
 	}
 
-	public void setUser_type(String user_type) {
-		this.user_type = user_type.toString();
+	public void setUserType(String userType) {
+		this.userType = userType.toString();
 	}
 
 	@Override
 	public String toString() {
-		return "WebAccount [account_id=" + account_id + ", acc_password=" + acc_password + ", user_type=" + user_type
+		return "WebAccount [accountId=" + accountId + ", accPassword=" + accPassword + ", userType=" + userType
 				+ "]";
 	}
 

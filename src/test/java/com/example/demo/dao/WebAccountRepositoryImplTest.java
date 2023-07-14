@@ -9,16 +9,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 class WebAccountRepositoryImplTest {
 
 	@Autowired
-	private WebAccountRepository testAccountRepo;
+	private WebAccountRepository accountRepo;
 	
 	@Test
 	void testFindAll() {
-		assertEquals(testAccountRepo.findAll().size(),9);
+		assertEquals(accountRepo.findAll().size(),9);
 	}
 	
 	@Test
 	void testFindUserTypeById() {
-		assertEquals(testAccountRepo.findUserTypeById("simleung").trim(),"client");
+		assertEquals(accountRepo.findUserTypeById("simleung").trim(),"client");
 	}
 
 }

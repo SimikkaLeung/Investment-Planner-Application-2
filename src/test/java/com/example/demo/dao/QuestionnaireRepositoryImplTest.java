@@ -13,35 +13,35 @@ import com.example.demo.models.Questionnaire;
 class QuestionnaireRepositoryImplTest {
 
 	@Autowired
-	private QuestionnaireRepository testQuestRepo;
+	private QuestionnaireRepository questRepo;
 	
 	@Test
 	void testSaveAndDelete() {
 		
 		Questionnaire quest = new Questionnaire(2222,2,new BigDecimal(5000),new BigDecimal(5),500);
-		assertEquals(testQuestRepo.save(quest),1);
-		assertEquals(testQuestRepo.delete(quest),1);
+		assertEquals(questRepo.save(quest),1);
+		assertEquals(questRepo.delete(quest),1);
 	}
 
 	
 	@Test
 	void testFindById() {
-		assertEquals(testQuestRepo.findById(3).getQuest_id(),3);
+		assertEquals(questRepo.findById(3).getQuestId(),3);
 	}
 
 	@Test
 	void testFindAll() {
-		assertTrue(testQuestRepo.findAll().size()==5);
+		assertTrue(questRepo.findAll().size()==5);
 	}
 	
 	@Test
 	void testFindClientId() {
-		assertTrue(testQuestRepo.findByClientId(1).size()==3);
+		assertTrue(questRepo.findByClientId(1).size()==3);
 	}
 	
 	@Test
 	void testFindMaxQuestId() {
-		assertTrue(testQuestRepo.findMaxQuestId()==5);
+		assertTrue(questRepo.findMaxQuestId()==5);
 	}
 	
 	

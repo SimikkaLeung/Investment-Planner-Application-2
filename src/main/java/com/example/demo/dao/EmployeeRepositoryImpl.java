@@ -14,13 +14,13 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public Employee findById(Integer employee_id) {
-		return jdbcTemplate.queryForObject("SELECT * FROM employee WHERE employee_id = ?", BeanPropertyRowMapper.newInstance(Employee.class),employee_id);
+	public Employee findById(Integer employeeId) {
+		return jdbcTemplate.queryForObject("SELECT * FROM employee WHERE employee_id = ?", BeanPropertyRowMapper.newInstance(Employee.class),employeeId);
 	}
 
 	@Override
-	public String findFullNameById(Integer employee_id) {
-		return jdbcTemplate.queryForObject("SELECT CONCAT(employee_fname, ' ', employee_lname) FROM employee WHERE employee_id = ?", String.class, employee_id);
+	public String findFullNameById(Integer employeeId) {
+		return jdbcTemplate.queryForObject("SELECT CONCAT(employee_fname, ' ', employee_lname) FROM employee WHERE employee_id = ?", String.class, employeeId);
 	}
 	
 	

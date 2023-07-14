@@ -1,48 +1,48 @@
 package com.example.demo.models;
 
 public class Suggestion {
-	private Integer suggestion_id;
-	private Integer quest_id;
-	private Integer product_id;
+	private Integer suggestionId;
+	private Integer questId;
+	private Integer productId;
 	
 	public Suggestion() {
 		
 	}
 	
-	public Suggestion(Integer suggestion_id, Integer quest_id, Integer product_id) {
+	public Suggestion(Integer suggestionId, Integer questId, Integer productId) {
 		super();
-		this.suggestion_id = suggestion_id;
-		this.quest_id = quest_id;
-		this.product_id = product_id;
+		this.suggestionId = suggestionId;
+		this.questId = questId;
+		this.productId = productId;
 	}
 
-	public Integer getSuggestion_id() {
-		return suggestion_id;
+	public Integer getSuggestionId() {
+		return suggestionId;
 	}
 
-	public void setSuggestion_id(Integer suggestion_id) {
-		this.suggestion_id = suggestion_id;
+	public void setSuggestionId(Integer suggestionId) {
+		this.suggestionId = suggestionId;
 	}
 
-	public Integer getQuest_id() {
-		return quest_id;
+	public Integer getQuestId() {
+		return questId;
 	}
 
-	public void setQuest_id(Integer quest_id) {
-		this.quest_id = quest_id;
+	public void setQuestId(Integer questId) {
+		this.questId = questId;
 	}
 
-	public Integer getProduct_id() {
-		return product_id;
+	public Integer getProductId() {
+		return productId;
 	}
 
-	public void setProduct_id(Integer product_id) {
-		this.product_id = product_id;
+	public void setProductId(Integer productId) {
+		this.productId = productId;
 	}
 
 	@Override
 	public String toString() {
-		return "Suggestion [suggestion_id=" + suggestion_id + ", quest_id=" + quest_id + ", product_id=" + product_id
+		return "Suggestion [suggestionId=" + suggestionId + ", questId=" + questId + ", productId=" + productId
 				+ "]";
 	}
 	

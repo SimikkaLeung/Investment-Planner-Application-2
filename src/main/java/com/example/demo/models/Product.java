@@ -3,130 +3,130 @@ package com.example.demo.models;
 import java.math.BigDecimal;
 
 public class Product {
-	private Integer product_id;
-	private String product_name;
-	private String product_type;
-	private Integer num_of_days;
-	private BigDecimal interest_rate;
-	private BigDecimal min_principal;
-	private BigDecimal max_principal;
-	private Integer days_per_compounding;
-	private BigDecimal effective_rate;
-	private String product_desc;
+	private Integer productId;
+	private String productName;
+	private String productType;
+	private Integer numOfDays;
+	private BigDecimal interestRate;
+	private BigDecimal minPrincipal;
+	private BigDecimal maxPrincipal;
+	private Integer daysPerCompounding;
+	private BigDecimal effectiveRate;
+	private String productDesc;
 	
 	
 	public Product() {
 		super();
 	}
 	
-	public Product(Integer product_id, String product_name, String product_type, Integer num_of_days,
-			BigDecimal interest_rate, BigDecimal min_principal, BigDecimal max_principal, Integer days_per_compounding,
-			BigDecimal effective_rate, String product_desc) {
+	public Product(Integer productId, String productName, String productType, Integer numOfDays,
+			BigDecimal interestRate, BigDecimal minPrincipal, BigDecimal maxPrincipal, Integer daysPerCompounding,
+			BigDecimal effectiveRate, String productDesc) {
 		super();
-		this.product_id = product_id;
-		this.product_name = product_name;
-		this.product_type = product_type;
-		this.num_of_days = num_of_days;
-		this.interest_rate = interest_rate;
-		this.min_principal = min_principal;
-		this.max_principal = max_principal;
-		this.days_per_compounding = days_per_compounding;
-		this.effective_rate = effective_rate;
-		this.product_desc = product_desc;
+		this.productId = productId;
+		this.productName = productName;
+		this.productType = productType;
+		this.numOfDays = numOfDays;
+		this.interestRate = interestRate;
+		this.minPrincipal = minPrincipal;
+		this.maxPrincipal = maxPrincipal;
+		this.daysPerCompounding = daysPerCompounding;
+		this.effectiveRate = effectiveRate;
+		this.productDesc = productDesc;
 	}
 
-	public Integer getProduct_id() {
-		return product_id;
+	public Integer getProductId() {
+		return productId;
 	}
 
-	public void setProduct_id(Integer product_id) {
-		this.product_id = product_id;
+	public void setProductId(Integer productId) {
+		this.productId = productId;
 	}
 
-	public String getProduct_name() {
-		return product_name;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public String getProduct_type() {
-		return product_type;
+	public String getProductType() {
+		return productType;
 	}
 
-	public void setProduct_type(String product_type) {
-		this.product_type = product_type;
+	public void setProductType(String productType) {
+		this.productType = productType;
 	}
 
-	public Integer getNum_of_days() {
-		return num_of_days;
+	public Integer getNumOfDays() {
+		return numOfDays;
 	}
 
-	public void setNum_of_days(Integer num_of_days) {
-		this.num_of_days = num_of_days;
+	public void setNumOfDays(Integer numOfDays) {
+		this.numOfDays = numOfDays;
 	}
 
-	public BigDecimal getInterest_rate() {
-		return interest_rate;
+	public BigDecimal getInterestRate() {
+		return interestRate;
 	}
 
-	public void setInterest_rate(BigDecimal interest_rate) {
-		this.interest_rate = interest_rate;
+	public void setInterestRate(BigDecimal interestRate) {
+		this.interestRate = interestRate;
 		//Since Java does not support the calculation of the power of two BigDecimal values, 
 		//This application will update the interest rate in the database 
 		//and fetch the new effective rate from the database instead. 
 	}
 
-	public BigDecimal getMin_principal() {
-		return min_principal;
+	public BigDecimal getMinPrincipal() {
+		return minPrincipal;
 	}
 
-	public void setMin_principal(BigDecimal min_principal) {
-		this.min_principal = min_principal;
+	public void setMinPrincipal(BigDecimal minPrincipal) {
+		this.minPrincipal = minPrincipal;
 	}
 
-	public BigDecimal getMax_principal() {
-		return max_principal;
+	public BigDecimal getMaxPrincipal() {
+		return maxPrincipal;
 	}
 
-	public void setMax_principal(BigDecimal max_principal) {
-		this.max_principal = max_principal;
+	public void setMaxPrincipal(BigDecimal maxPrincipal) {
+		this.maxPrincipal = maxPrincipal;
 	}
 
-	public Integer getDays_per_compounding() {
-		return days_per_compounding;
+	public Integer getDaysPerCompounding() {
+		return daysPerCompounding;
 	}
 
-	public void setDays_per_compounding(Integer days_per_compounding) {
-		this.days_per_compounding = days_per_compounding;
+	public void setDaysPerCompounding(Integer daysPerCompounding) {
+		this.daysPerCompounding = daysPerCompounding;
 		//Since Java does not support the calculation of the power of two BigDecimal values, 
 		//This application will update the day per compound period in the database and 
 		// fetch the new effective rate from the database instead. 
 	}
 
-	public BigDecimal getEffective_rate() {
-		return effective_rate;
+	public BigDecimal getEffectiveRate() {
+		return effectiveRate;
 	}
 
-	public void setEffective_rate(BigDecimal effective_rate) {
-		this.effective_rate = effective_rate;
+	public void setEffectiveRate(BigDecimal effectiveRate) {
+		this.effectiveRate = effectiveRate;
 	}
 
-	public String getProduct_desc() {
-		return product_desc;
+	public String getProductDesc() {
+		return productDesc;
 	}
 
-	public void setProduct_desc(String product_desc) {
-		this.product_desc = product_desc;
+	public void setProductDesc(String productDesc) {
+		this.productDesc = productDesc;
 	}
 
 	@Override
 	public String toString() {
-		return "Product [product_id=" + product_id + ", product_name=" + product_name + ", product_type=" + product_type
-				+ ", num_of_days=" + num_of_days + ", interest_rate=" + interest_rate + ", min_principal="
-				+ min_principal + ", max_principal=" + max_principal + ", days_per_compounding=" + days_per_compounding
-				+ ", effective_rate=" + effective_rate + ", product_desc=" + product_desc + "]";
+		return "Product [productId=" + productId + ", productName=" + productName + ", productType=" + productType
+				+ ", numOfDays=" + numOfDays + ", interestRate=" + interestRate + ", minPrincipal="
+				+ minPrincipal + ", maxPrincipal=" + maxPrincipal + ", daysPerCompounding=" + daysPerCompounding
+				+ ", effectiveRate=" + effectiveRate + ", productDesc=" + productDesc + "]";
 	}
 	
 	

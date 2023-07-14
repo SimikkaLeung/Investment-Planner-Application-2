@@ -13,24 +13,24 @@ import com.example.demo.models.Questionnaire;
 class ProductRepositoryImplTest {
 
 	@Autowired
-	private ProductRepository testProductRepo;
+	private ProductRepository productRepo;
 	
 	@Test
 	void testFindById() {
-		assertEquals(testProductRepo.findById(1).getProduct_id(),1);
+		assertEquals(productRepo.findById(1).getProductId(),1);
 	}
 	
 	@Test
 	void testFindAll() {
-		assertEquals(testProductRepo.findAll().size(),10);
+		assertEquals(productRepo.findAll().size(),10);
 	}	
 	
 	@Test
 	void testFindByCriteria() {
 		Questionnaire quest = new Questionnaire(222,2,new BigDecimal(3000),new BigDecimal(3),183);
-		assertEquals(testProductRepo.findByCriteria(quest).size(),2);
+		assertEquals(productRepo.findByCriteria(quest).size(),2);
 		
-		assertEquals(testProductRepo.findByCriteria(new BigDecimal(3000),new BigDecimal(3),183).size(),2);
+		assertEquals(productRepo.findByCriteria(new BigDecimal(3000),new BigDecimal(3),183).size(),2);
 	}	
 	
 

@@ -16,14 +16,14 @@ public class BankClientRepositoryImpl implements BankClientRepository {
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public BankClient findById(Integer client_id) {	
-		return jdbcTemplate.queryForObject("SELECT * FROM bankclient WHERE client_id = ?", BeanPropertyRowMapper.newInstance(BankClient.class), client_id);
+	public BankClient findById(Integer clientId) {	
+		return jdbcTemplate.queryForObject("SELECT * FROM bankclient WHERE client_id = ?", BeanPropertyRowMapper.newInstance(BankClient.class), clientId);
 	}
 
 	@Override
-	public BankClient findByAccountId(String account_id) {
+	public BankClient findByAccountId(String accountId) {
 		return jdbcTemplate.queryForObject("SELECT * FROM bankclient WHERE account_id = ?", 
-				BeanPropertyRowMapper.newInstance(BankClient.class), account_id);
+				BeanPropertyRowMapper.newInstance(BankClient.class), accountId);
 	}
 
 	@Override

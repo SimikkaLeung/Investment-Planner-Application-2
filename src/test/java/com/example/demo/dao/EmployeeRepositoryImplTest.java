@@ -13,16 +13,16 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 class EmployeeRepositoryImplTest {
 
 	@Autowired
-	private EmployeeRepository testEmployeeRepo;
+	private EmployeeRepository employeeRepo;
 	
 	@Test
 	void testFindById() {
-		assertEquals(testEmployeeRepo.findById(1).getEmployee_id(),1);
+		assertEquals(employeeRepo.findById(1).getEmployeeId(),1);
 	}
 	
 	@Test
 	void testFindFullNameById() {				
-		assertEquals(testEmployeeRepo.findFullNameById(1).trim(),"Kelvin Cheung");
+		assertEquals(employeeRepo.findFullNameById(1).trim(),"Kelvin Cheung");
 	}
 	
 

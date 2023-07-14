@@ -12,8 +12,8 @@ import javax.validation.constraints.NotNull;
 import com.example.demo.exceptions.InvalidInputException;
 
 public class Questionnaire {
-	private Integer quest_id;
-	private Integer client_id;
+	private Integer questId;
+	private Integer clientId;
 	
 	@NotNull
 	@DecimalMin(value="0.01", message="The principal must be greater than zero.")
@@ -23,43 +23,43 @@ public class Questionnaire {
 	@NotNull
 	@DecimalMin(value="0.0000001", message="The rate must be greater than zero.")
 	@DecimalMax(value="999.99", message="Our online tool cannot handle this interest rate. Please book an appointment with a financial advisor.")
-	private BigDecimal target_rate;
+	private BigDecimal targetRate;
 	
 	@NotNull
-	@Min(value = 1, message="The rate must be greater than zero.")
+	@Min(value = 1, message="The number of days must be greater than zero.")
 	@Max(value = 2147483647, message="Our online tool cannot handle this duration. Please book an appointment with a financial advisor.")
-	private Integer num_of_days;
-	private LocalDateTime submission_time;
+	private Integer numOfDays;
+	private LocalDateTime submissionTime;
 	
 	public Questionnaire() {
-		this.submission_time = LocalDateTime.now();
+		this.submissionTime = LocalDateTime.now();
 	}
 	
-	public Questionnaire(Integer quest_id, Integer client_id, BigDecimal principal, BigDecimal target_rate,
-			Integer num_of_days) {
+	public Questionnaire(Integer questId, Integer clientId, BigDecimal principal, BigDecimal targetRate,
+			Integer numOfDays) {
 		super();
-		this.quest_id = quest_id;
-		this.client_id = client_id;
+		this.questId = questId;
+		this.clientId = clientId;
 		this.principal = principal;
-		this.target_rate = target_rate;
-		this.num_of_days = num_of_days;
-		this.submission_time = LocalDateTime.now();
+		this.targetRate = targetRate;
+		this.numOfDays = numOfDays;
+		this.submissionTime = LocalDateTime.now();
 	}
 
-	public Integer getQuest_id() {
-		return quest_id;
+	public Integer getQuestId() {
+		return questId;
 	}
 
-	public void setQuest_id(Integer quest_id) {
-		this.quest_id = quest_id;
+	public void setQuestId(Integer questId) {
+		this.questId = questId;
 	}
 
-	public Integer getClient_id() {
-		return client_id;
+	public Integer getClientId() {
+		return clientId;
 	}
 
-	public void setClient_id(Integer client_id) {
-		this.client_id = client_id;
+	public void setClientId(Integer clientId) {
+		this.clientId = clientId;
 	}
 
 	public BigDecimal getPrincipal() {
@@ -70,35 +70,35 @@ public class Questionnaire {
 		this.principal = principal;
 	}
 
-	public BigDecimal getTarget_rate() {
-		return target_rate;
+	public BigDecimal getTargetRate() {
+		return targetRate;
 	}
 
-	public void setTarget_rate(BigDecimal target_rate) {
-		this.target_rate = target_rate;
+	public void setTargetRate(BigDecimal targetRate) {
+		this.targetRate = targetRate;
 	}
 
-	public Integer getNum_of_days() {
-		return num_of_days;
+	public Integer getNumOfDays() {
+		return numOfDays;
 	}
 
-	public void setNum_of_days(Integer num_of_days) throws InvalidInputException {
-		this.num_of_days = num_of_days;
+	public void setNumOfDays(Integer numOfDays) throws InvalidInputException {
+		this.numOfDays = numOfDays;
 	}
 
-	public LocalDateTime getSubmission_time() {
-		return submission_time;
+	public LocalDateTime getSubmissionTime() {
+		return submissionTime;
 	}
 
-	public void setSubmission_time(LocalDateTime submission_time) {
-		this.submission_time = submission_time;
+	public void setSubmissionTime(LocalDateTime submissionTime) {
+		this.submissionTime = submissionTime;
 	}
 
 	@Override
 	public String toString() {
-		return "Questionnaire [quest_id=" + quest_id + ", client_id=" + client_id + ", principal=" + principal
-				+ ", target_rate=" + target_rate + ", num_of_days=" + num_of_days + ", submission_time="
-				+ submission_time + "]";
+		return "Questionnaire [questId=" + questId + ", clientId=" + clientId + ", principal=" + principal
+				+ ", targetRate=" + targetRate + ", numOfDays=" + numOfDays + ", submissionTime="
+				+ submissionTime + "]";
 	}
 	
 	
