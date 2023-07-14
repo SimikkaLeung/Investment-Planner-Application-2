@@ -56,6 +56,4 @@ public class Employee {
 				+ employeeFname + ", employeeLname=" + employeeLname + "]";
 	}
 	
-	
-	
 }
