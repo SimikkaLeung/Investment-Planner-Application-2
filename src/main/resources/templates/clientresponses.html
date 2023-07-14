@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>MyMoney Bank - Employee Portal</title>
+</head>
+<body>
+<h3>Client Info:</h3>
+<table border="1">
+  <tr>
+    <th>Client ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Employee Assigned</th>
+  </tr>
+  <tr th:object="${selectedClient}">
+    <td th:text="${selectedClient.clientId}">
+	<td th:text="${selectedClient.clientFname}">
+	<td th:text="${selectedClient.clientLname}">
+	<td th:text="${selectedClient.employeeAssigned}">				
+  </tr>
+</table>
+<br><br>
+<h3>Questionnaire Responses and Product Suggestions:</h3>
+<table border="1">
+  <th:block th:each="entry: ${questProdMap}">
+  <tr>
+    <th>Questionnaire ID</th>
+    <th>Principal</th>
+    <th>Target Rate of Return</th>
+    <th>Term (Days)</th>
+    <th>Submission Time</th>
+  </tr>
+  <tr>
+    <td th:text="${entry.key.questId}">
+	<td th:text="${entry.key.principal}">
+	<td th:text="${entry.key.targetRate}">
+	<td th:text="${entry.key.numOfDays}">		
+	<td th:text="${entry.key.submissionTime}">		
+	<hr>	
+  </tr>
+  <tr>
+    <th>Product ID</th>
+    <th>Product Name</th>
+    <th>Term (Days)</th>
+    <th>Expected Interest Rate (%)</th>
+    <th>Minimum Principal</th>
+    <th>Maximum Principal</th>
+    <th>Days per Compounding Period</th>
+    <th>Effective Interest Rate (%)</th>
+    <th>Product Description</th>
+  </tr>
+  <tr th:each="product: ${entry.value}">
+    <td th:text="${product.productId}">
+	<td th:text="${product.productName}">
+	<td th:text="${product.numOfDays}">
+	<td th:text="${product.interestRate}">
+	<td th:text="${product.minPrincipal}">
+	<td th:text="${product.maxPrincipal}">
+	<td th:text="${product.daysPerCompounding}">
+	<td th:text="${product.effectiveRate}">
+	<td th:text="${product.productDesc}">					
+  </tr>
+  
+  </th:block>
+</table>
+<br><br>
+
+
+</body>
+</html>
