@@ -4,8 +4,8 @@ import com.example.demo.models.Employee;
 
 public interface EmployeeRepository {
 
-	public Employee findById(Integer employee_id);
+	public Employee findById(Integer employeeId);
 	
-	public String findFullNameById(Integer employee_id);
+	public String findFullNameById(Integer employeeId);
 	
 }

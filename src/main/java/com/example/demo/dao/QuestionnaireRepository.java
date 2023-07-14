@@ -8,11 +8,11 @@ public interface QuestionnaireRepository {
 
 	public int save(Questionnaire quest);
 	
-	public Questionnaire findById(Integer quest_id);
+	public Questionnaire findById(Integer questId);
 	
 	public List<Questionnaire> findAll();
 	
-	public List<Questionnaire> findByClientId(Integer client_id);
+	public List<Questionnaire> findByClientId(Integer clientId);
 	
 	public Integer findMaxQuestId();
 	

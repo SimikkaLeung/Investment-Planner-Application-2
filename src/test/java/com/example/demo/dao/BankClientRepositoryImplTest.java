@@ -10,22 +10,22 @@ import org.springframework.boot.test.context.SpringBootTest;
 class BankClientRepositoryImplTest {
 
 	@Autowired
-	private BankClientRepository testClientRepo;
+	private BankClientRepository clientRepo;
 	
 	@Test
 	void testById() {
-		assertEquals(testClientRepo.findById(1).getClient_id(),1);
+		assertEquals(clientRepo.findById(1).getClientId(),1);
 	}
 	
 
 	@Test
 	void testFindByAccountId() {
-		assertEquals(testClientRepo.findByAccountId("simleung").getClient_lname(),"TestLeung");
+		assertEquals(clientRepo.findByAccountId("simleung").getClientLname(),"TestLeung");
 	}
 	
 	@Test
 	void testFindAll() {
-		assertEquals(testClientRepo.findAll().size(),6);
+		assertEquals(clientRepo.findAll().size(),6);
 	}
 	
 

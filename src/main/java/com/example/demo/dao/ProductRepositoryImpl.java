@@ -18,9 +18,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public Product findById(Integer product_id) {
-		// TODO Auto-generated method stub
-		return jdbcTemplate.queryForObject("SELECT * FROM product WHERE product_id = ?", BeanPropertyRowMapper.newInstance(Product.class), product_id);
+	public Product findById(Integer productId) {
+		return jdbcTemplate.queryForObject("SELECT * FROM product WHERE product_id = ?", BeanPropertyRowMapper.newInstance(Product.class), productId);
 	}
 
 	@Override
@@ -29,15 +28,15 @@ public class ProductRepositoryImpl implements ProductRepository {
 	}
 
 	@Override
-	public List<Product> findByCriteria(BigDecimal principal, BigDecimal target_rate, Integer num_of_days) {
+	public List<Product> findByCriteria(BigDecimal principal, BigDecimal targetRate, Integer numOfDays) {
 		return jdbcTemplate.query("SELECT * FROM product WHERE ? >= effective_rate AND ? >= min_principal AND ? <= max_principal AND ? >= num_of_days ORDER BY effective_rate DESC, num_of_days ASC"
-				, BeanPropertyRowMapper.newInstance(Product.class), target_rate, principal, principal, num_of_days);
+				, BeanPropertyRowMapper.newInstance(Product.class), targetRate, principal, principal, numOfDays);
 	}
 
 	@Override
 	public List<Product> findByCriteria(Questionnaire quest) {
 		return jdbcTemplate.query("SELECT * FROM product WHERE ? >= effective_rate AND ? >= min_principal AND ? <= max_principal AND ? >= num_of_days ORDER BY effective_rate DESC, num_of_days ASC"
-				, BeanPropertyRowMapper.newInstance(Product.class),quest.getTarget_rate(), quest.getPrincipal(), quest.getPrincipal(), quest.getNum_of_days());
+				, BeanPropertyRowMapper.newInstance(Product.class),quest.getTargetRate(), quest.getPrincipal(), quest.getPrincipal(), quest.getNumOfDays());
 	}
 	
 }

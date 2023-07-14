@@ -1,59 +1,59 @@
 package com.example.demo.models;
 
 public class Employee {
-	private Integer employee_id;
-	private String account_id;
-	private String employee_fname;
-	private String employee_lname;
+	private Integer employeeId;
+	private String accountId;
+	private String employeeFname;
+	private String employeeLname;
 	
 	public Employee() {
 		super();
 	}
 	
-	public Employee(Integer employee_id, String account_id, String employee_fname, String employee_lname) {
+	public Employee(Integer employeeId, String accountId, String employeeFname, String employeeLname) {
 		super();
-		this.employee_id = employee_id;
-		this.account_id = account_id;
-		this.employee_fname = employee_fname;
-		this.employee_lname = employee_lname;
+		this.employeeId = employeeId;
+		this.accountId = accountId;
+		this.employeeFname = employeeFname;
+		this.employeeLname = employeeLname;
 	}
 
-	public Integer getEmployee_id() {
-		return employee_id;
+	public Integer getEmployeeId() {
+		return employeeId;
 	}
 
-	public void setEmployee_id(Integer employee_id) {
-		this.employee_id = employee_id;
+	public void setEmployeeId(Integer employeeId) {
+		this.employeeId = employeeId;
 	}
 
-	public String getAccount_id() {
-		return account_id;
+	public String getAccountId() {
+		return accountId;
 	}
 
-	public void setAccount_id(String account_id) {
-		this.account_id = account_id;
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
 	}
 
-	public String getEmployee_fname() {
-		return employee_fname;
+	public String getEmployeeFname() {
+		return employeeFname;
 	}
 
-	public void setEmployee_fname(String employee_fname) {
-		this.employee_fname = employee_fname;
+	public void setEmployeeFname(String employeeFname) {
+		this.employeeFname = employeeFname;
 	}
 
-	public String getEmployee_lname() {
-		return employee_lname;
+	public String getEmployeeLname() {
+		return employeeLname;
 	}
 
-	public void setEmployee_lname(String employee_lname) {
-		this.employee_lname = employee_lname;
+	public void setEmployeeLname(String employeeLname) {
+		this.employeeLname = employeeLname;
 	}
 
 	@Override
 	public String toString() {
-		return "Employee [employee_id=" + employee_id + ", account_id=" + account_id + ", employee_fname="
-				+ employee_fname + ", employee_lname=" + employee_lname + "]";
+		return "Employee [employeeId=" + employeeId + ", accountId=" + accountId + ", employeeFname="
+				+ employeeFname + ", employeeLname=" + employeeLname + "]";
 	}
 	
 	

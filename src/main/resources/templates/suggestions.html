@@ -22,15 +22,15 @@
 			<th>Product Description</th>
 		</tr>
 		<tr th:each="product: ${productList}">
-			<td th:text="${product.product_id}">
-			<td th:text="${product.product_name}">
-			<td th:text="${product.num_of_days}">
-			<td th:text="${product.interest_rate}">
-			<td th:text="${product.min_principal}">
-			<td th:text="${product.max_principal}">
-			<td th:text="${product.days_per_compounding}">
-			<td th:text="${product.effective_rate}">
-			<td th:text="${product.product_desc}">
+			<td th:text="${product.productId}">
+			<td th:text="${product.productName}">
+			<td th:text="${product.numOfDays}">
+			<td th:text="${product.interestRate}">
+			<td th:text="${product.minPrincipal}">
+			<td th:text="${product.maxPrincipal}">
+			<td th:text="${product.daysPerCompounding}">
+			<td th:text="${product.effectiveRate}">
+			<td th:text="${product.productDesc}">
 		</tr>
 	</table>
 	<br>

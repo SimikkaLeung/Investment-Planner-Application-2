@@ -14,11 +14,11 @@
 			<input type="number" th:field="*{principal}" required /><br />
 			<div  class="alert alert-warning" th:if="${#fields.hasErrors('principal')}" th:errors="*{principal}"></div>
 			<label>Target Rate of Return:</label>
-			<input type="number" th:field="*{target_rate}" required /><br />
-			<div  class="alert alert-warning" th:if="${#fields.hasErrors('target_rate')}" th:errors="*{target_rate}"></div>
+			<input type="number" th:field="*{targetRate}" required /><br />
+			<div  class="alert alert-warning" th:if="${#fields.hasErrors('targetRate')}" th:errors="*{targetRate}"></div>
 			<label>Term (Days):</label>
-			<input type="number" th:field="*{num_of_days}" required /><br />
-			<div  class="alert alert-warning" th:if="${#fields.hasErrors('num_of_days')}" th:errors="*{num_of_days}"></div>
+			<input type="number" th:field="*{numOfDays}" required /><br />
+			<div  class="alert alert-warning" th:if="${#fields.hasErrors('numOfDays')}" th:errors="*{numOfDays}"></div>
 			<button type="submit">I can't wait to see the plans!</button>
 		</form>
 	</div>

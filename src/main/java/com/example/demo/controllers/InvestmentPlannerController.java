@@ -1,4 +1,4 @@
-package com.example.demo.controllers.dao;
+package com.example.demo.controllers;
 
 import java.util.List;
 import java.util.Map;
@@ -68,7 +68,7 @@ public class InvestmentPlannerController {
 		}
 		
 		BankClient client = securityService.findClientbyAccountId();		// Get the current client data
-        quest.setClient_id(client.getClient_id());
+        quest.setClientId(client.getClientId());
 		myService.addQuestionnaire(quest);
 		List<Product> productList = myService.findProductsByCriteria(quest);
 		productList.stream().forEach((p) -> myService.addSuggestion(quest,p));
@@ -92,9 +92,9 @@ public class InvestmentPlannerController {
 	@PostMapping("/employee/clientdetails")
 	public String browseClientResponses(Model model, @ModelAttribute("selectedClient") BankClient selectedClient){
 
-		selectedClient = myService.findClientById(selectedClient.getClient_id());
+		selectedClient = myService.findClientById(selectedClient.getClientId());
 		model.addAttribute("selectedClient",selectedClient);
-		Map<Questionnaire, List<Product>> questProdMap = myService.findAllProductsQuestsByClientId(selectedClient.getClient_id());
+		Map<Questionnaire, List<Product>> questProdMap = myService.findAllProductsQuestsByClientId(selectedClient.getClientId());
 		model.addAttribute("questProdMap",questProdMap);
 		return "clientresponses";
 	}

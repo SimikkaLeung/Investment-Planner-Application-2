@@ -16,22 +16,22 @@
 			<th>Employee Assigned</th>
 		</tr>
 		<tr th:each="client: ${allClients}">
-			<td th:text="${client.client_id}">
-			<td th:text="${client.client_fname}">
-			<td th:text="${client.client_lname}">
-			<td th:text="${client.employee_assigned}">
+			<td th:text="${client.clientId}">
+			<td th:text="${client.clientFname}">
+			<td th:text="${client.clientLname}">
+			<td th:text="${client.employeeAssigned}">
 		</tr>
 	</table>
 	<br><br>
-	<h3>Select a client id to browse questionnaire reponses.</h3>
+	<h3>Select a client id to browse questionnaire responses.</h3>
 	<div align="center">
 		<form action="#" th:action="@{/employee/clientdetails}" method="post" th:object="${selectedClient}">
 			<table>
 				<tr>
 					<td>
-						<select class="form-control" id="dropDownList" th:field="*{client_id}">
-							<option th:each="client: ${allClients}" th:value="${client.client_id}"
-								th:text="${client.client_id}">
+						<select class="form-control" id="dropDownList" th:field="*{clientId}">
+							<option th:each="client: ${allClients}" th:value="${client.clientId}"
+								th:text="${client.clientId}">
 							</option>
 						</select>
 					</td>

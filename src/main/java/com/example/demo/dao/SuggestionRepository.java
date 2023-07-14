@@ -8,13 +8,13 @@ public interface SuggestionRepository {
 	
 	public int save(Suggestion suggestion);	
 	
-	public Suggestion findById(Integer suggestion_id);	
+	public Suggestion findById(Integer suggestionId);	
 	
 	public List<Suggestion> findAll();	
 	
-	public List<Suggestion> findByQuestId(Integer quest_id);	
+	public List<Suggestion> findByQuestId(Integer questId);	
 	
-	public List<Suggestion> findByProductId(Integer product_id);		
+	public List<Suggestion> findByProductId(Integer productId);		
 	
 	public Integer findMaxSuggestionId();
 	

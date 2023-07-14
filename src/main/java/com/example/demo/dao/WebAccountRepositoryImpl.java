@@ -21,8 +21,8 @@ public class WebAccountRepositoryImpl implements WebAccountRepository {
 	}
 
 	@Override
-	public String findUserTypeById(String account_id) {
-		return jdbcTemplate.queryForObject("SELECT user_type FROM webaccount WHERE account_id = ?", String.class, account_id);
+	public String findUserTypeById(String accountId) {
+		return jdbcTemplate.queryForObject("SELECT user_type FROM webaccount WHERE account_id = ?", String.class, accountId);
 	}
 	
 	

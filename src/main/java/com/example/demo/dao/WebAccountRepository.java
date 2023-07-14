@@ -9,6 +9,6 @@ public interface WebAccountRepository {
 	//public int findById(String account_id);
 	
 	public List<WebAccount> findAll();
-	public String findUserTypeById(String account_id);
+	public String findUserTypeById(String accountId);
 	
 }

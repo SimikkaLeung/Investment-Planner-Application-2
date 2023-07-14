@@ -17,14 +17,14 @@ public class SuggestionRepositoryImpl implements SuggestionRepository {
 
 	@Override
 	public int save(Suggestion suggestion) {
-		return jdbcTemplate.update("INSERT INTO suggestion VALUES(?,?,?)",suggestion.getSuggestion_id(),suggestion.getQuest_id(),suggestion.getProduct_id());
+		return jdbcTemplate.update("INSERT INTO suggestion VALUES(?,?,?)",suggestion.getSuggestionId(),suggestion.getQuestId(),suggestion.getProductId());
 		
 	}
 
 	@Override
-	public Suggestion findById(Integer suggestion_id) {
+	public Suggestion findById(Integer suggestionId) {
 		return jdbcTemplate.queryForObject("SELECT * FROM suggestion WHERE suggestion_id = ?", 
-				BeanPropertyRowMapper.newInstance(Suggestion.class), suggestion_id);
+				BeanPropertyRowMapper.newInstance(Suggestion.class), suggestionId);
 	}
 
 	@Override
@@ -34,15 +34,15 @@ public class SuggestionRepositoryImpl implements SuggestionRepository {
 	}
 
 	@Override
-	public List<Suggestion> findByQuestId(Integer quest_id) {
+	public List<Suggestion> findByQuestId(Integer questId) {
 		return jdbcTemplate.query("SELECT * FROM suggestion WHERE quest_id = ?", 
-				BeanPropertyRowMapper.newInstance(Suggestion.class), quest_id);
+				BeanPropertyRowMapper.newInstance(Suggestion.class), questId);
 	}
 
 	@Override
-	public List<Suggestion> findByProductId(Integer product_id) {
+	public List<Suggestion> findByProductId(Integer productId) {
 		return jdbcTemplate.query("SELECT * FROM suggestion WHERE product_id = ?", 
-				BeanPropertyRowMapper.newInstance(Suggestion.class), product_id);
+				BeanPropertyRowMapper.newInstance(Suggestion.class), productId);
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class SuggestionRepositoryImpl implements SuggestionRepository {
 	@Override
 	public int delete(Suggestion suggestion) {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.update("DELETE FROM suggestion WHERE suggestion_id = ?",suggestion.getSuggestion_id());
+		return jdbcTemplate.update("DELETE FROM suggestion WHERE suggestion_id = ?",suggestion.getSuggestionId());
 	}
 	
 	

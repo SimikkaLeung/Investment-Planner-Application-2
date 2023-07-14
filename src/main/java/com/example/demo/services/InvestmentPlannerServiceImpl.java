@@ -58,37 +58,37 @@ public class InvestmentPlannerServiceImpl implements InvestmentPlannerService {
 	}
 
 	@Override
-	public BigDecimal validateRate(String strTarget_rate) throws InvalidInputException {
+	public BigDecimal validateRate(String strTargetRate) throws InvalidInputException {
 		// TODO Auto-generated method stub
-		BigDecimal target_rate = null;
+		BigDecimal targetRate = null;
 		try {
-			target_rate = new BigDecimal(strTarget_rate);
+			targetRate = new BigDecimal(strTargetRate);
 		} catch (NumberFormatException nfe) {
 			throw new InvalidInputException();
 		}
 		
-		return target_rate;
+		return targetRate;
 	}
 
 	@Override
-	public Integer validateDays(String strNum_of_days) throws InvalidInputException {
+	public Integer validateDays(String strNumOfDays) throws InvalidInputException {
 		// TODO Auto-generated method stub
-		Integer num_of_days = null;
+		Integer numOfDays = null;
 		try {
-			num_of_days = Integer.parseInt(strNum_of_days);
+			numOfDays = Integer.parseInt(strNumOfDays);
 		} catch (NumberFormatException nfe) {
 			throw new InvalidInputException();
 		}
 		
-		return num_of_days;
+		return numOfDays;
 	}
 
 	@Override
-	public List<Questionnaire> submitQuessionnaire(Integer client_id, BigDecimal principal, BigDecimal target_rate,
-			Integer num_of_days) {
+	public List<Questionnaire> submitQuessionnaire(Integer clientId, BigDecimal principal, BigDecimal targetRate,
+			Integer numOfDays) {
 		// TODO Auto-generated method stub
-		Integer newQuest_id = questRepo.findMaxQuestId()+1;
-		Questionnaire quest = new Questionnaire(newQuest_id,client_id,principal,target_rate,num_of_days);
+		Integer newQuestId = questRepo.findMaxQuestId()+1;
+		Questionnaire quest = new Questionnaire(newQuestId,clientId,principal,targetRate,numOfDays);
 		questRepo.save(quest);
 		return null;
 	}
@@ -103,20 +103,20 @@ public class InvestmentPlannerServiceImpl implements InvestmentPlannerService {
 	@Override
 	public int addQuestionnaire(Questionnaire quest) {
 		// TODO Auto-generated method stub
-		quest.setQuest_id(questRepo.findMaxQuestId()+1);
+		quest.setQuestId(questRepo.findMaxQuestId()+1);
 		return questRepo.save(quest);
 	}
 
 	@Override
 	public int addSuggestion(Questionnaire quest, Product product) {
-		Suggestion suggestion = new Suggestion(suggRepo.findMaxSuggestionId()+1,quest.getQuest_id(),product.getProduct_id());
+		Suggestion suggestion = new Suggestion(suggRepo.findMaxSuggestionId()+1,quest.getQuestId(),product.getProductId());
 		return suggRepo.save(suggestion);
 	}
 
 	@Override
-	public String findEmployeeNameById(Integer employee_id) {
+	public String findEmployeeNameById(Integer employeeId) {
 		// TODO Auto-generated method stub
-		return employeeRepo.findFullNameById(employee_id);
+		return employeeRepo.findFullNameById(employeeId);
 	}
 
 	@Override
@@ -126,52 +126,52 @@ public class InvestmentPlannerServiceImpl implements InvestmentPlannerService {
 	}
 
 	@Override
-	public BankClient findClientById(Integer client_id) {
+	public BankClient findClientById(Integer clientId) {
 		// TODO Auto-generated method stub
-		return clientRepo.findById(client_id);
+		return clientRepo.findById(clientId);
 	}
 
 	@Override
-	public List<Questionnaire> findQuestionnaireByClientId(Integer client_id) {
+	public List<Questionnaire> findQuestionnaireByClientId(Integer clientId) {
 		// TODO Auto-generated method stub
-		return questRepo.findByClientId(client_id);
+		return questRepo.findByClientId(clientId);
 	}
 
 	@Override
-	public List<Suggestion> findSuggestionByQuestId(Integer quest_id) {
+	public List<Suggestion> findSuggestionByQuestId(Integer questId) {
 		// TODO Auto-generated method stub
-		return suggRepo.findByQuestId(quest_id);
+		return suggRepo.findByQuestId(questId);
 	}
 	
 	@Override
-	public Product findProductById(Integer product_id) {
+	public Product findProductById(Integer productId) {
 		// TODO Auto-generated method stub
-		return productRepo.findById(product_id);
+		return productRepo.findById(productId);
 	}
 
 	@Override
-	public List<Product> findAllProductsByQuestId(Integer quest_id) {
+	public List<Product> findAllProductsByQuestId(Integer questId) {
 		// TODO Auto-generated method stub
 		
-		List<Suggestion> suggList = findSuggestionByQuestId(quest_id);
+		List<Suggestion> suggList = findSuggestionByQuestId(questId);
 		
 		List<Product> productList = new ArrayList<Product>();
 		for (Suggestion sugg : suggList) {
-			productList.add(findProductById(sugg.getProduct_id()));
+			productList.add(findProductById(sugg.getProductId()));
 		}
 
 		return productList;
 	}
 
 	@Override
-	public Map<Questionnaire, List<Product>> findAllProductsQuestsByClientId(Integer client_id) {
+	public Map<Questionnaire, List<Product>> findAllProductsQuestsByClientId(Integer clientId) {
 		// TODO Auto-generated method stub
 		
-		Map<Questionnaire, List<Product>> questProdMap = new TreeMap<Questionnaire, List<Product>>( (q1,q2) -> q2.getQuest_id().compareTo(q1.getQuest_id()) );
+		Map<Questionnaire, List<Product>> questProdMap = new TreeMap<Questionnaire, List<Product>>( (q1,q2) -> q2.getQuestId().compareTo(q1.getQuestId()) );
 
-		List<Questionnaire> questList = findQuestionnaireByClientId(client_id);
+		List<Questionnaire> questList = findQuestionnaireByClientId(clientId);
 		for (Questionnaire q: questList) {
-			questProdMap.put(q, findAllProductsByQuestId(q.getQuest_id()));
+			questProdMap.put(q, findAllProductsByQuestId(q.getQuestId()));
 		}
 		return questProdMap;
 	}
